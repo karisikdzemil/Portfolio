@@ -4,6 +4,8 @@ import StatsSection from "../../components/StatsSection";
 import AboutSection from "../../components/AboutSection";
 import SkillsPage from "../../components/SkillsPage";
 import ProjectsPage from "../../components/ProjectsPage";
+import ContactPage from "../../components/ContactPage";
+import Footer from "../../components/Footer";
 
 export default function Home() {
   return (
@@ -26,7 +28,9 @@ export default function Home() {
       <StatsSection />
       <AboutSection />
       <SkillsPage />
-        <ProjectsPage />
+      <ProjectsPage />
+      <ContactPage />
+      <Footer />
     </>
   );
 }
