@@ -28,14 +28,14 @@ export default function AboutSection() {
             viewport={{ once: true }}
           >
             <p>
-              I am a passionate <span className="text-cyan-400">web developer</span> with a strong focus on building
+              I am a passionate <span className="text-cyan-400 font-bold">web developer</span> with a strong focus on building
               beautiful and performant user interfaces.
             </p>
             <p>
-              My expertise lies in <span className="text-cyan-400">React.js</span> and crafting dynamic applications.
+              My expertise lies in <span className="text-cyan-400 font-bold">React.js</span> and crafting dynamic applications.
             </p>
             <p>
-              I value <span className="text-cyan-400">problem solving</span>, performance, and clean code.
+              I value <span className="text-cyan-400 font-bold">problem solving</span>, performance, and clean code.
             </p>
           </motion.div>
 

@@ -1,0 +1,37 @@
+"use client";
+import { motion } from "framer-motion";
+
+export default function ProjectCard({ icon, title, description, tags, links }) {
+  return (
+    <motion.div
+      whileHover={{ scale: 1.03 }}
+      transition={{ duration: 0.3 }}
+      className=" bg-[#111] border border-neutral-800 rounded-2xl overflow-hidden shadow-lg hover:shadow-pink-500/20"
+    >
+      <div className="h-40 bg-gradient-to-r from-cyan-400 to-pink-500 flex justify-center items-center text-5xl">
+        {icon}
+      </div>
+      <div className="p-6">
+        <h3 className="text-xl font-bold text-white mb-2">{title}</h3>
+        <p className="text-gray-400 text-sm mb-4">{description}</p>
+        <div className="flex flex-wrap gap-2 mb-3">
+          {tags.map((tag, i) => (
+            <span
+              key={i}
+              className="text-xs bg-[#222] px-2 py-1 rounded-full border border-neutral-700 text-cyan-300"
+            >
+              {tag}
+            </span>
+          ))}
+        </div>
+        <div className="flex gap-4 text-sm font-semibold text-cyan-400">
+          {links.map((link, i) => (
+            <a href={link.href} key={i} className="hover:underline">
+              {link.label} →
+            </a>
+          ))}
+        </div>
+      </div>
+    </motion.div>
+  );
+}

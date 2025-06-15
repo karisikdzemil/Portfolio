@@ -2,6 +2,8 @@ import Image from "next/image";
 import TypingEffect from "../../components/TypingEffect";
 import StatsSection from "../../components/StatsSection";
 import AboutSection from "../../components/AboutSection";
+import SkillsPage from "../../components/SkillsPage";
+import ProjectsPage from "../../components/ProjectsPage";
 
 export default function Home() {
   return (
@@ -23,6 +25,8 @@ export default function Home() {
     </section>
       <StatsSection />
       <AboutSection />
+      <SkillsPage />
+        <ProjectsPage />
     </>
   );
 }
