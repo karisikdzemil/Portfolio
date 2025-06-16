@@ -1,4 +1,3 @@
-import Image from "next/image";
 import TypingEffect from "../../components/TypingEffect";
 import StatsSection from "../../components/StatsSection";
 import AboutSection from "../../components/AboutSection";
@@ -6,6 +5,7 @@ import SkillsPage from "../../components/SkillsPage";
 import ProjectsPage from "../../components/ProjectsPage";
 import ContactPage from "../../components/ContactPage";
 import Footer from "../../components/Footer";
+import EducationPage from "../../components/EducationPage";
 
 export default function Home() {
   return (
@@ -29,6 +29,7 @@ export default function Home() {
       <AboutSection />
       <SkillsPage />
       <ProjectsPage />
+      <EducationPage />
       <ContactPage />
       <Footer />
     </>
