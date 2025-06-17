@@ -1,28 +1,88 @@
 import SkillsCard from "./SkillsCard";
 import {
+  faHtml5,
+  faCss3Alt,
+  faJs,
+  faSass,
+  faGitAlt,
+  faDocker,
   faReact,
-  faNodeJs,
-  faDatabase,
+  faTypo3,
 } from "@fortawesome/free-brands-svg-icons";
 
-const skills = [
+import {
+  faBolt,
+  faCheckCircle,
+  faCubes,
+  faFireAlt,
+  faMemory,
+} from "@fortawesome/free-solid-svg-icons";
+
+export const skills = [
   {
-    icon: faReact,
-    title: "Frontend",
-    description:
-      "Expertise in building interactive UIs using React, Next.js and Tailwind CSS.",
+    icon: faHtml5,
+    title: "HTML5",
+    description: "Semantic and accessible markup with strong understanding of web structure.",
   },
   {
-    icon: faNodeJs,
-    title: "Backend",
-    description:
-      "Building scalable APIs with Node.js, Express and working with REST & GraphQL.",
+    icon: faCss3Alt,
+    title: "CSS / SCSS",
+    description: "Responsive design, animations, and modular SCSS architecture.",
+  },
+  {
+    icon: faJs,
+    title: "JavaScript",
+    description: "Solid grasp of ES6+ features and DOM manipulation techniques.",
+  },
+  {
+    icon: faTypo3,
+    title: "TypeScript",
+    description: "Type-safe JavaScript that improves scalability and maintainability.",
+  },
+  {
+    icon: faSass,
+    title: "Tailwind & SCSS",
+    description: "Fast styling with Tailwind utility classes and structured SCSS.",
   },
   {
     icon: faReact,
-    title: "Databases",
-    description:
-      "Experience with PostgreSQL, MongoDB and Firebase real-time data management.",
+    title: "React / Next.js",
+    description: "SPA and SSR development using React, Next.js, and component-based architecture.",
+  },
+  {
+    icon: faMemory,
+    title: "Redux & Redux Toolkit",
+    description: "Global state management for scalable and performant applications.",
+  },
+  {
+    icon: faGitAlt,
+    title: "Git",
+    description: "Version control with Git, GitHub flow, and collaborative workflows.",
+  },
+  {
+    icon: faDocker,
+    title: "Docker",
+    description: "Containerization of apps for consistent development and deployment.",
+  },
+  {
+    icon: faFireAlt,
+    title: "Firebase",
+    description: "Authentication, real-time database, and Firestore integration.",
+  },
+  {
+    icon: faCubes,
+    title: "Socket.io",
+    description: "Real-time communication and event-driven architecture using websockets.",
+  },
+  {
+    icon: faCheckCircle,
+    title: "Jest",
+    description: "Unit and component testing with coverage for mission-critical features.",
+  },
+  {
+    icon: faBolt,
+    title: "Framer Motion",
+    description: "Smooth and modern animations for engaging user interfaces.",
   },
 ];
 
