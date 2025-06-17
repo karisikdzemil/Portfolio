@@ -2,7 +2,7 @@ import EducationCard from "./EducationCard";
 
 export default function EducationPage() {
   return (
-    <section className="px-6 md:px-16 py-20 bg-black text-white">
+    <section id="education" className="px-6 md:px-16 py-20 bg-black text-white">
       <h1 className="text-4xl md:text-6xl font-extrabold text-center bg-gradient-to-r from-cyan-400 to-pink-500 text-transparent bg-clip-text mb-12">
         Education & Learning
       </h1>
@@ -14,6 +14,7 @@ export default function EducationPage() {
           </h2>
           <EducationCard
             type="formal"
+            from="left"
             title="Bachelor of Science in Computer Science"
             subtitle="Stanford University"
             period="2015 - 2019"
@@ -26,7 +27,6 @@ export default function EducationPage() {
             ]}
           />
         </div>
-
         <div>
           <h2 className="text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-pink-400 mb-6 flex items-center gap-2">
             📘 Courses & Certifications
@@ -34,6 +34,7 @@ export default function EducationPage() {
           <div className="flex flex-col gap-6">
             <EducationCard
               type="course"
+              from="right"
               title="Advanced React Patterns"
               subtitle="Kent C. Dodds – Epic React"
               period="2023"
@@ -41,6 +42,7 @@ export default function EducationPage() {
             />
             <EducationCard
               type="course"
+              from="right"
               title="TypeScript Masterclass"
               subtitle="Udemy – Maximilian Schwarzmüller"
               period="2023"
@@ -48,6 +50,7 @@ export default function EducationPage() {
             />
             <EducationCard
               type="course"
+              from="right"
               title="Next.js Complete"
               subtitle="Udemy – Maximilian Schwarzmüller"
               period="2023"

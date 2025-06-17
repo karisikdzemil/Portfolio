@@ -3,11 +3,13 @@ import { motion } from "framer-motion";
 import { FaGraduationCap } from "react-icons/fa";
 import { BsPatchCheckFill } from "react-icons/bs";
 
-export default function EducationCard({ type, title, subtitle, period, description, tags, status }) {
+export default function EducationCard({ type, title, subtitle, period, description, tags, status, from = "left" }) {
   return (
     <motion.div
-      whileHover={{ scale: 1.02 }}
-      transition={{ duration: 0.3 }}
+      initial={{ opacity: 0, x: from === "left" ? -100 : 100 }}
+      whileInView={{ opacity: 1, x: 0 }}
+      transition={{ duration: 0.6, ease: "easeOut" }}
+      viewport={{ once: true, amount: 0.5 }}
       className="bg-[#111] border border-neutral-800 rounded-2xl p-6 shadow-lg"
     >
       <div className="flex items-center gap-3 mb-4">

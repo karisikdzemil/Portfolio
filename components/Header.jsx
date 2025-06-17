@@ -7,12 +7,12 @@ export default function Header () {
           DzK
         </div>
         <ul className="flex gap-6">
-          <li className="hover:text-cyan-400 cursor-pointer">Home</li>
-          <li className="hover:text-cyan-400 cursor-pointer">About</li>
-          <li className="hover:text-cyan-400 cursor-pointer">Skills</li>
-          <li className="hover:text-cyan-400 cursor-pointer">Projects</li>
-          <li className="hover:text-cyan-400 cursor-pointer">Education</li>
-          <li className="hover:text-cyan-400 cursor-pointer">Contact</li>
+        <li className="hover:text-cyan-400 cursor-pointer"> <a href="#home">Home </a></li>
+          <li className="hover:text-cyan-400 cursor-pointer"> <a href="#about">About </a></li>
+          <li className="hover:text-cyan-400 cursor-pointer"> <a href="#skills">Skills </a></li>
+          <li className="hover:text-cyan-400 cursor-pointer"> <a href="#projects">Projects </a></li>
+          <li className="hover:text-cyan-400 cursor-pointer"> <a href="#education">Edication </a></li>
+          <li className="hover:text-cyan-400 cursor-pointer"> <a href="#contact">Contact </a></li>
         </ul>
       </nav>
       

@@ -30,7 +30,7 @@ const contacts = [
 
 export default function ContactPage() {
   return (
-    <section className="px-6 py-16 bg-black min-h-screen text-white">
+    <section id="contact" className="px-6 py-16 bg-black min-h-screen text-white">
       <h2 className="text-5xl font-extrabold text-center mb-6 bg-gradient-to-r from-cyan-400 to-pink-500 text-transparent bg-clip-text">
         Let's Create Something Amazing
       </h2>
