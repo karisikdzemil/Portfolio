@@ -19,7 +19,7 @@ const skills = [
       "Building scalable APIs with Node.js, Express and working with REST & GraphQL.",
   },
   {
-    icon: faDatabase,
+    icon: faReact,
     title: "Databases",
     description:
       "Experience with PostgreSQL, MongoDB and Firebase real-time data management.",

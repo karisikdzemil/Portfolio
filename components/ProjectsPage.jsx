@@ -33,19 +33,22 @@ const projects = [
       { label: "Live Demo", href: "#" },
       { label: "Case Study", href: "#" },
     ],
-  },    
+  },
 ];
 
 export default function ProjectsPage() {
   return (
-    <section id="projects" className="px-4 md:px-8 lg:px-16 py-16 bg-black min-h-screen text-white">
+    <section
+      id="projects"
+      className="px-4 md:px-8 lg:px-16 py-16 bg-black min-h-screen text-white"
+    >
       <h2 className="text-5xl font-extrabold text-center bg-gradient-to-r from-cyan-400 to-pink-500 text-transparent bg-clip-text mb-16">
         Featured Projects
       </h2>
 
       <div className="max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 justify-items-center">
         {projects.map((project, index) => (
-          <ProjectCard key={index} {...project} />
+          <ProjectCard key={index} {...project} delay={index * 0.2} />
         ))}
       </div>
     </section>

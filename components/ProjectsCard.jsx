@@ -1,11 +1,13 @@
 "use client";
 import { motion } from "framer-motion";
 
-export default function ProjectCard({ icon, title, description, tags, links }) {
+export default function ProjectCard({ icon, title, description, tags, links, delay = 0 }) {
   return (
     <motion.div
-      whileHover={{ scale: 1.03 }}
-      transition={{ duration: 0.3 }}
+      initial={{ opacity: 0, x: -50 }}
+      whileInView={{ opacity: 1, x: 0 }}
+      transition={{ duration: 0.6, delay }}
+      viewport={{ once: true, amount: 0.3 }}
       className="w-[320px] md:w-[360px] bg-[#111] border border-neutral-800 rounded-2xl overflow-hidden shadow-lg hover:shadow-pink-500/20"
     >
       <div className="h-36 bg-gradient-to-r from-cyan-400 to-pink-500 flex justify-center items-center text-5xl">
