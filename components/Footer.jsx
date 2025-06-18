@@ -11,7 +11,7 @@ export default function Footer() {
   return (
     <footer className="bg-black py-8 text-center text-sm text-gray-500 border-t border-neutral-800">
       <p className="mb-4">
-        © 2024 Dzemil Karisik. Crafted with passion and cutting-edge technologies.
+        © 2025 Dzemil Karisik. Crafted with passion and cutting-edge technologies.
       </p>
       <div className="flex justify-center gap-6">
         {socials.map((item, i) => (

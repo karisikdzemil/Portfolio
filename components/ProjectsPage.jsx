@@ -46,7 +46,7 @@ export default function ProjectsPage() {
         Featured Projects
       </h2>
 
-      <div className="max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 justify-items-center">
+      <div className="max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 justify-items-center min-w-0">
         {projects.map((project, index) => (
           <ProjectCard key={index} {...project} delay={index * 0.2} />
         ))}

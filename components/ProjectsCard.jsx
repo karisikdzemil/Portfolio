@@ -2,14 +2,21 @@
 import { motion } from "framer-motion";
 import Image from "next/image";
 
-export default function ProjectCard({ image, title, description, tags, links, delay = 0 }) {
+export default function ProjectCard({
+  image,
+  title,
+  description,
+  tags,
+  links,
+  delay = 0,
+}) {
   return (
     <motion.div
       initial={{ opacity: 0, x: -50 }}
       whileInView={{ opacity: 1, x: 0 }}
       transition={{ duration: 0.6, delay }}
       viewport={{ once: true, amount: 0.3 }}
-      className="w-[320px] md:w-[360px] bg-[#111] border border-neutral-800 rounded-2xl overflow-hidden shadow-lg hover:shadow-pink-500/20"
+      className="w-full max-w-xs sm:max-w-sm bg-[#111] border border-neutral-800 rounded-2xl overflow-hidden shadow-lg hover:shadow-pink-500/20"
     >
       <div className="h-36 md:h-44 w-full overflow-hidden relative">
         <Image
