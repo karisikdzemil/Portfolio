@@ -2,8 +2,10 @@ import StatCard from "./StatCard";
 
 export default function StatsSection() {
   const stats = [
-    { number: 5, title: "Years Experience" },
-    { number: 150, title: "Projects Completed" },
+    { number: 3, title: "Years Experience" },
+    { number: 30, title: "Projects Completed" },
+    { number: 4, title: "Hackathons / Camps" }
+
   ];
 
   return (

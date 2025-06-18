@@ -10,7 +10,7 @@ export default function EducationCard({ type, title, subtitle, period, descripti
       whileInView={{ opacity: 1, x: 0 }}
       transition={{ duration: 0.6, ease: "easeOut" }}
       viewport={{ once: true, amount: 0.5 }}
-      className="bg-[#111] border border-neutral-800 rounded-2xl p-6 shadow-lg"
+      className="bg-[#111] border border-neutral-800 rounded-2xl p-6 shadow-lg "
     >
       <div className="flex items-center gap-3 mb-4">
         <div className="text-2xl text-cyan-400">

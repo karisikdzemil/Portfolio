@@ -6,7 +6,7 @@ const projects = [
     description:
       "A nostalgic social platform where users can relive and discuss events from the past. Features include profile creation, event posting, filtering, and anonymous real-time chat using WebSockets.",
     image: "/retrovibe.png",
-    tags: ["Next.js", "React.js", "Tailwind CSS", "Firebase", "Redux Toolkit", "Socket.io", "Jest"],
+    tags: ["Next.js", "React.js", "Tailwind CSS", "Firebase", "Redux Toolkit","Node.js", "Socket.io", "Jest"],
     links: [
       { label: "Live Demo", href: "https://retrovibe-client.vercel.app/" },
       { label: "GitHub", href: "https://github.com/karisikdzemil/RetroVibe" },

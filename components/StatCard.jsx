@@ -14,7 +14,7 @@ export default function StatCard({ number, title }) {
           setHasAnimated(true);
         }
       },
-      { threshold: 0.5 } // pokreni kad je 50% elementa vidljivo
+      { threshold: 0.5 } 
     );
 
     if (ref.current) {

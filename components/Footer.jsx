@@ -3,7 +3,7 @@ import { FaEnvelope, FaGithub, FaLinkedin, FaPhone } from "react-icons/fa";
 export default function Footer() {
   const socials = [
     { icon: <FaEnvelope />, href: "mailto:karisikdzemil@gmail.com" },
-    { icon: <FaLinkedin />, href: "https://linkedin.com/in/dzemilkarisik" },
+    { icon: <FaLinkedin />, href: "https://www.linkedin.com/in/d%C5%BEemil-kari%C5%A1ik-37b964253/" },
     { icon: <FaPhone />, href: "tel:+381640302888" },
     { icon: <FaGithub />, href: "https://github.com/karisikdzemil" },
   ];

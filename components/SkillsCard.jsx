@@ -7,7 +7,7 @@ export default function SkillsCard({ title, description, icon, delay = 0 }) {
     <motion.div
       initial={{ opacity: 0, x: -50 }}
       whileInView={{ opacity: 1, x: 0 }}
-      transition={{ duration: 0.6, delay }}
+      transition={{ duration: 0.4}}
       viewport={{ once: true, amount: 0.4 }}
       className="w-[280px] md:w-[300px] h-[400px] bg-[#111] border border-neutral-800 rounded-2xl p-6 shadow-lg hover:shadow-cyan-500/30 text-center flex flex-col items-center gap-6"
     >

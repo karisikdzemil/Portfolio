@@ -12,7 +12,7 @@ const contacts = [
     icon: <FaLinkedin />,
     label: "LinkedIn",
     value: "linkedin.com/in/dzemilkarisik",
-    href: "https://linkedin.com/in/dzemilkarisik",
+    href: "https://www.linkedin.com/in/d%C5%BEemil-kari%C5%A1ik-37b964253/",
   },
   {
     icon: <FaGithub />,
