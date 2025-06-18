@@ -6,7 +6,16 @@ const projects = [
     description:
       "A nostalgic social platform where users can relive and discuss events from the past. Features include profile creation, event posting, filtering, and anonymous real-time chat using WebSockets.",
     image: "/retrovibe.png",
-    tags: ["Next.js", "React.js", "Tailwind CSS", "Firebase", "Redux Toolkit","Node.js", "Socket.io", "Jest"],
+    tags: [
+      "Next.js",
+      "React.js",
+      "Tailwind CSS",
+      "Firebase",
+      "Redux Toolkit",
+      "Node.js",
+      "Socket.io",
+      "Jest",
+    ],
     links: [
       { label: "Live Demo", href: "https://retrovibe-client.vercel.app/" },
       { label: "GitHub", href: "https://github.com/karisikdzemil/RetroVibe" },
@@ -28,12 +37,19 @@ const projects = [
     description:
       "A modern crypto trading simulation app where users can explore currencies, track price trends, and trade with a demo balance. The app includes interactive charts, transaction history, and portfolio analytics.",
     image: "/crypto.png",
-    tags: ["React.js", "Tailwind CSS", "Context API", "Chart.js", "Firestore", "CoinMarketCap API"],
+    tags: [
+      "React.js",
+      "Tailwind CSS",
+      "Context API",
+      "Chart.js",
+      "Firestore",
+      "CoinMarketCap API",
+    ],
     links: [
       { label: "Live Demo", href: "https://crypto-app-rho-virid.vercel.app/" },
       { label: "GitHub", href: "https://github.com/karisikdzemil/Crypto-App" },
     ],
-  },  
+  },
 ];
 
 export default function ProjectsPage() {
@@ -51,6 +67,18 @@ export default function ProjectsPage() {
           <ProjectCard key={index} {...project} delay={index * 0.2} />
         ))}
       </div>
+      <p className="text-center mt-12 text-lg text-gray-300">
+        There are many more interesting projects on my GitHub if you're
+        curious:&nbsp;
+        <a
+          href="https://github.com/karisikdzemil"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-cyan-400 underline hover:text-pink-400 transition-colors duration-300"
+        >
+          GitHub
+        </a>
+      </p>
     </section>
   );
 }
