@@ -2,38 +2,38 @@ import ProjectCard from "./ProjectsCard";
 
 const projects = [
   {
-    title: "E-Commerce Platform",
+    title: "RetroVibe",
     description:
-      "A comprehensive e-commerce solution built with Next.js and TypeScript. Features include real-time inventory, advanced filtering, and secure payment processing with Stripe.",
-    icon: "🛍️",
-    tags: ["Next.js", "TypeScript", "Tailwind CSS", "Stripe", "Redis"],
+      "A nostalgic social platform where users can relive and discuss events from the past. Features include profile creation, event posting, filtering, and anonymous real-time chat using WebSockets.",
+    image: "/retrovibe.png",
+    tags: ["Next.js", "React.js", "Tailwind CSS", "Firebase", "Redux Toolkit", "Socket.io", "Jest"],
     links: [
-      { label: "Live Demo", href: "#" },
-      { label: "GitHub", href: "#" },
+      { label: "Live Demo", href: "https://retrovibe-client.vercel.app/" },
+      { label: "GitHub", href: "https://github.com/karisikdzemil/RetroVibe" },
     ],
   },
   {
-    title: "Analytics Dashboard",
+    title: "Vibely",
     description:
-      "Real-time data visualization dashboard with interactive charts and customizable widgets. Processes over 1M data points daily with sub-second load times.",
-    icon: "📊",
-    tags: ["React", "D3.js", "WebSockets", "Node.js", "PostgreSQL"],
+      "A feature-rich social media platform with user authentication, post creation and deletion, profile editing, dark mode, comments, likes, following system, and suggested users – all wrapped in a clean UI.",
+    image: "/vibely.png",
+    tags: ["React.js", "Tailwind CSS", "Redux Toolkit", "Firestore"],
     links: [
-      { label: "Live Demo", href: "#" },
-      { label: "Case Study", href: "#" },
+      { label: "Live Demo", href: "https://vibely-2628d.web.app/" },
+      { label: "GitHub", href: "https://github.com/karisikdzemil/Vibely" },
     ],
   },
   {
-    title: "Analytics Dashboard",
+    title: "Crypto Exchange Simulator",
     description:
-      "Real-time data visualization dashboard with interactive charts and customizable widgets. Processes over 1M data points daily with sub-second load times.",
-    icon: "📊",
-    tags: ["React", "D3.js", "WebSockets", "Node.js", "PostgreSQL"],
+      "A modern crypto trading simulation app where users can explore currencies, track price trends, and trade with a demo balance. The app includes interactive charts, transaction history, and portfolio analytics.",
+    image: "/crypto.png",
+    tags: ["React.js", "Tailwind CSS", "Context API", "Chart.js", "Firestore", "CoinMarketCap API"],
     links: [
-      { label: "Live Demo", href: "#" },
-      { label: "Case Study", href: "#" },
+      { label: "Live Demo", href: "https://crypto-app-rho-virid.vercel.app/" },
+      { label: "GitHub", href: "https://github.com/karisikdzemil/Crypto-App" },
     ],
-  },
+  },  
 ];
 
 export default function ProjectsPage() {
