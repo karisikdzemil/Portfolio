@@ -11,7 +11,7 @@ import EducationPage from "../../components/EducationPage";
 
 export default function Home() {
   return (
-    <>
+    <div className="overflow-x-hidden">
       <section
         id="home"
         className="h-screen flex flex-col justify-center items-center text-center bg-gradient-to-r from-[#010D14] via-[#0A1E28] to-[#260C0D] text-white px-4"
@@ -61,6 +61,6 @@ export default function Home() {
       <EducationPage />
       <ContactPage />
       <Footer />
-    </>
+    </div>
   );
 }
