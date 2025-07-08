@@ -14,7 +14,7 @@ export default function Home() {
     <div className="overflow-x-hidden">
       <section
         id="home"
-        className="h-screen flex flex-col justify-center items-center text-center bg-gradient-to-r from-[#010D14] via-[#0A1E28] to-[#260C0D] text-white px-4"
+        className="h-screen sm:scroll-smooth scroll-auto flex flex-col justify-center items-center text-center bg-gradient-to-r from-[#010D14] via-[#0A1E28] to-[#260C0D] text-white px-4"
       >
         <motion.h1
           initial={{ opacity: 0, y: -30 }}
