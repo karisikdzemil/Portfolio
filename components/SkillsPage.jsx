@@ -54,6 +54,11 @@ export const skills = [
     description: "Fast styling with Tailwind utility classes and structured SCSS.",
   },
   {
+  icon: faBolt, 
+  title: "Expo",
+  description: "Rapid development and deployment of React Native apps using Expo SDK and tools.",
+  },
+  {
     icon: faMemory,
     title: "Redux & Redux Toolkit",
     description: "Global state management for scalable and performant applications.",
