@@ -5,7 +5,6 @@ import {
   faJs,
   faSass,
   faGitAlt,
-  faDocker,
   faReact,
   faTypo3,
 } from "@fortawesome/free-brands-svg-icons";
@@ -40,14 +39,19 @@ export const skills = [
     description: "Type-safe JavaScript that improves scalability and maintainability.",
   },
   {
-    icon: faSass,
-    title: "Tailwind & SCSS",
-    description: "Fast styling with Tailwind utility classes and structured SCSS.",
-  },
-  {
     icon: faReact,
     title: "React / Next.js",
     description: "SPA and SSR development using React, Next.js, and component-based architecture.",
+  },
+    {
+    icon: faReact,
+    title: "React Native",
+    description: "I have strong skills in React Native and can build fully functional mobile applications.",
+  },
+  {
+    icon: faSass,
+    title: "Tailwind & SCSS",
+    description: "Fast styling with Tailwind utility classes and structured SCSS.",
   },
   {
     icon: faMemory,
@@ -58,11 +62,6 @@ export const skills = [
     icon: faGitAlt,
     title: "Git",
     description: "Version control with Git, GitHub flow, and collaborative workflows.",
-  },
-  {
-    icon: faDocker,
-    title: "Docker",
-    description: "Containerization of apps for consistent development and deployment.",
   },
   {
     icon: faFireAlt,
