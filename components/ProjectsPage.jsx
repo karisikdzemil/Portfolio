@@ -52,6 +52,26 @@ const projects = [
   },
 ];
 
+const nativeProjects = [
+  {
+    title: "ShopNative",
+    description:
+      "A fully featured e-commerce mobile app that allows users to create an account, browse products, manage favorites, search by category, add items to cart, enter payment methods and delivery addresses, place orders, and view their order history. Built with React Native and Expo, and powered by Firebase for real-time data and authentication.",
+    image: "/ShopNative.png",
+    tags: ["React Native", "Expo", "Firebase", "Tailwind CSS", "Redux Toolkit"],
+    links: [
+      {
+        label: "Expo Demo",
+        href: "https://expo.dev/accounts/dzemilk/projects/ShopNative",
+      },
+      {
+        label: "GitHub",
+        href: "https://github.com/karisikdzemil/ShopNative",
+      },
+    ],
+  },
+];
+
 export default function ProjectsPage() {
   return (
     <section
@@ -67,6 +87,18 @@ export default function ProjectsPage() {
           <ProjectCard key={index} {...project} delay={index * 0.2} />
         ))}
       </div>
+      <div className="mt-24">
+        <h3 className="text-4xl font-bold text-center text-white mb-12 bg-gradient-to-r from-pink-400 to-cyan-400 text-transparent bg-clip-text">
+          Mobile Projects
+        </h3>
+
+        <div className="max-w-4xl mx-auto grid grid-cols-1 sm:grid-cols-1 md:grid-cols-1 gap-12 justify-items-center">
+          {nativeProjects.map((project, index) => (
+            <ProjectCard key={index} {...project} delay={index * 0.2} />
+          ))}
+        </div>
+      </div>
+
       <p className="text-center mt-12 text-lg text-gray-300">
         There are many more interesting projects on my GitHub if you're
         curious:&nbsp;
