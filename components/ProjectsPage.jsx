@@ -88,7 +88,7 @@ export default function ProjectsPage() {
         ))}
       </div>
       <div className="mt-24">
-        <h3 className="text-4xl font-bold text-center text-white mb-12 bg-gradient-to-r from-pink-400 to-cyan-400 text-transparent bg-clip-text">
+        <h3 className="text-4xl font-bold text-center mb-12 bg-gradient-to-r from-pink-400 to-cyan-400 text-transparent bg-clip-text">
           Mobile Projects
         </h3>
 
