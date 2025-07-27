@@ -58,7 +58,7 @@ const nativeProjects = [
     description:
       "A fully featured e-commerce mobile app that allows users to create an account, browse products, manage favorites, search by category, add items to cart, enter payment methods and delivery addresses, place orders, and view their order history. Built with React Native and Expo, and powered by Firebase for real-time data and authentication.",
     image: "/ShopNative.png",
-    tags: ["React Native", "Expo", "Firebase", "Tailwind CSS", "Redux Toolkit"],
+    tags: ["React Native", "Expo", "Firebase", "Tailwind CSS", "Redux Toolkit", "eCommerce API"],
     links: [
       {
         label: "Expo Demo",
