@@ -1,7 +1,12 @@
 "use client";
 import { useState, useEffect } from "react";
 
-const words = ["React Developer", "Problem Solver", "Performance Expert"];
+const words = [
+  "web apps.",
+  "REST & real-time APIs.",
+  "React Native apps.",
+  "fullstack JavaScript.",
+];
 
 export default function TypingEffect() {
   const [wordIndex, setWordIndex] = useState(0);
@@ -10,7 +15,7 @@ export default function TypingEffect() {
 
   useEffect(() => {
     const currentWord = words[wordIndex];
-    const speed = isDeleting ? 50 : 120;
+    const speed = isDeleting ? 40 : 90;
 
     const timeout = setTimeout(() => {
       setText((prev) =>
@@ -20,7 +25,7 @@ export default function TypingEffect() {
       );
 
       if (!isDeleting && text === currentWord) {
-        setTimeout(() => setIsDeleting(true), 1000);
+        setTimeout(() => setIsDeleting(true), 1400);
       } else if (isDeleting && text === "") {
         setIsDeleting(false);
         setWordIndex((prev) => (prev + 1) % words.length);
@@ -31,9 +36,10 @@ export default function TypingEffect() {
   }, [text, isDeleting, wordIndex]);
 
   return (
-    <p className="text-xl text-gray-400 mt-2 min-h-[28px]">
-      {text}
-      <span className="animate-pulse">|</span>
+    <p className="min-h-[2.5rem] font-mono text-xl text-white/70 md:text-2xl">
+      <span className="text-white/40">{"// building "}</span>
+      <span className="text-accent">{text}</span>
+      <span className="animate-blink text-accent">|</span>
     </p>
   );
 }

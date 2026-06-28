@@ -1,7 +1,7 @@
 "use client";
 import { useEffect, useRef, useState } from "react";
 
-export default function StatCard({ number, title }) {
+export default function StatCard({ number, suffix = "", title }) {
   const [count, setCount] = useState(0);
   const [hasAnimated, setHasAnimated] = useState(false);
   const ref = useRef(null);
@@ -14,16 +14,15 @@ export default function StatCard({ number, title }) {
           setHasAnimated(true);
         }
       },
-      { threshold: 0.5 } 
+      { threshold: 0.5 }
     );
 
-    if (ref.current) {
-      observer.observe(ref.current);
-    }
+    if (ref.current) observer.observe(ref.current);
 
     return () => {
       if (ref.current) observer.unobserve(ref.current);
     };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const animateCount = () => {
@@ -31,7 +30,7 @@ export default function StatCard({ number, title }) {
     const end = parseInt(number);
     if (start === end) return;
 
-    const duration = 2000;
+    const duration = 1200;
     const stepTime = Math.max(Math.floor(duration / end), 20);
 
     const timer = setInterval(() => {
@@ -42,14 +41,14 @@ export default function StatCard({ number, title }) {
   };
 
   return (
-    <div
-      ref={ref}
-      className="bg-[#12191c] border border-cyan-900 text-center p-8 rounded-2xl w-64 shadow-md"
-    >
-      <h2 className="text-5xl font-bold bg-gradient-to-r from-cyan-400 to-pink-500 text-transparent bg-clip-text">
+    <div ref={ref} className="flex-1 px-8 py-10 text-center md:text-left">
+      <h2 className="font-mono text-5xl font-bold text-white md:text-6xl">
         {count}
+        <span className="text-accent">{suffix}</span>
       </h2>
-      <p className="text-gray-400 mt-2">{title}</p>
+      <p className="mt-2 font-mono text-xs uppercase tracking-[0.2em] text-white/50">
+        {title}
+      </p>
     </div>
   );
 }
