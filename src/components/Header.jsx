@@ -23,7 +23,7 @@ export default function Header() {
       <header className="fixed top-0 z-50 w-full border-b-2 border-white/10 bg-ink/95 backdrop-blur-sm">
         <nav className="flex h-16 w-full items-center justify-between px-6 md:px-10">
           <Link href="/" className="font-mono text-lg font-bold tracking-tight text-white">
-            DK<span className="text-accent">_</span>
+            DzK<span className="text-accent">_</span>
           </Link>
 
           <ul className="hidden items-center gap-8 font-mono text-sm uppercase tracking-wider md:flex">
@@ -79,7 +79,7 @@ export default function Header() {
             >
               <div className="flex items-center justify-between">
                 <span className="font-mono text-lg font-bold text-white">
-                  DK<span className="text-accent">_</span>
+                  DzK<span className="text-accent">_</span>
                 </span>
                 <button
                   className="text-3xl text-white hover:text-accent"

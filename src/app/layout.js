@@ -24,9 +24,9 @@ export const metadata = {
   },
   description:
     "Dzemil Karisik is a fullstack JavaScript engineer building web and mobile products end to end — React, Next.js, React Native, Node.js and real-time systems.",
-  icons: {
-    icon: "/favicon.png",
-  },
+  // icons: {
+  //   icon: "/favicon.png",
+  // },
 };
 
 export default function RootLayout({ children }) {
