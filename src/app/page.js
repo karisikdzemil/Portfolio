@@ -5,7 +5,7 @@ import GithubActivity from "@/components/GithubActivity";
 
 const quickStats = [
   { value: "3+", label: "Years coding" },
-  { value: "4", label: "Projects shipped" },
+  { value: "5", label: "Projects shipped" },
   { value: "2", label: "Platforms" },
   { value: "2023", label: "Started uni" },
 ];

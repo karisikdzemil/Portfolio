@@ -1,5 +1,41 @@
 export const projects = [
   {
+    slug: "havenspace",
+    title: "HavenSpace",
+    type: "web",
+    year: "2025",
+    role: "Solo developer",
+    summary:
+      "A full-stack real estate platform with AI-powered property search, interactive maps, agent profiles, and real-time inquiries.",
+    description:
+      "HavenSpace is a full-stack real estate platform where users can browse, search and save properties, connect with agents, and send inquiries — all in one place. Built end to end as a solo project, covering everything from JWT authentication and Cloudinary image uploads to AI-assisted search powered by the Gemini API and interactive Leaflet maps.",
+    image: "/havenspace.png",
+    tags: [
+      "React",
+      "Node.js",
+      "Express",
+      "MongoDB",
+      "Tailwind CSS",
+      "Framer Motion",
+      "Cloudinary",
+      "Gemini API",
+      "Leaflet",
+      "JWT",
+    ],
+    links: [
+      { label: "Live Demo", href: "https://haven-space-theta.vercel.app/" },
+      { label: "GitHub", href: "https://github.com/karisikdzemil/HavenSpace" },
+    ],
+    problem:
+      "Real estate platforms are either bloated portals with poor UX or simple listing pages with no intelligence. I wanted to build something end to end that felt like a real product — with proper auth, media handling, a working inquiry system, and AI search that actually helps users find what they are looking for.",
+    approach: [
+      "Built the frontend in React with Tailwind CSS and Framer Motion for smooth page transitions and animated property cards. Leaflet handles the interactive map layer, letting users explore listings by location.",
+      "Backend is a Node.js/Express REST API with MongoDB Atlas for data persistence. JWT handles authentication with protected routes on both the client and server. Cloudinary manages property image uploads and storage.",
+      "Integrated the Gemini API to power AI-assisted property search — users can describe what they want in natural language and get matched listings back, rather than filling out rigid filter forms.",
+      "Agents have dedicated profiles with their active listings. Users can save favourites, manage an inquiry inbox, and contact agents directly through the platform — covering the full interaction loop from discovery to enquiry.",
+    ],
+  },
+  {
     slug: "retrovibe",
     title: "RetroVibe",
     type: "web",
