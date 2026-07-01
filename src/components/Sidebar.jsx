@@ -49,6 +49,7 @@ function SidebarContent({ onClose }) {
             src="/portfolioImage.jpeg"
             alt="Dzemil Karisik"
             fill
+            sizes="88px"
             className="object-cover object-top"
             priority
           />

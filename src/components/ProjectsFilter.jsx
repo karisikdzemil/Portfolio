@@ -36,7 +36,7 @@ export default function ProjectsFilter({ projects }) {
       </div>
 
       <div className="mt-5 grid gap-5 sm:grid-cols-2">
-        {filtered.map((project) => {
+        {filtered.map((project, i) => {
           const hasLive = project.links.some(
             (l) =>
               l.label.toLowerCase().includes("live") ||
@@ -62,6 +62,8 @@ export default function ProjectsFilter({ projects }) {
                   src={project.image}
                   alt={project.title}
                   fill
+                  sizes="(max-width: 640px) calc(100vw - 4rem), (max-width: 1280px) calc(50vw - 5rem), 380px"
+                  priority={i === 0}
                   className="object-cover transition-transform duration-500 group-hover:scale-[1.03]"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-ink-soft/80 via-ink-soft/10 to-transparent" />

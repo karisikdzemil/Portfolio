@@ -61,6 +61,7 @@ export default function AboutPage() {
                 src="/portfolioImage.jpeg"
                 alt="Dzemil Karisik"
                 fill
+                sizes="(max-width: 640px) 128px, 144px"
                 className="object-cover object-top"
               />
             </div>
