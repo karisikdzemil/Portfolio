@@ -55,9 +55,8 @@ function SidebarContent({ onClose }) {
         </div>
         <h1 className="mt-4 text-sm font-bold text-white">Dzemil Karisik</h1>
         <p className="mt-0.5 font-mono text-[11px] text-muted">Fullstack JS Engineer</p>
-        <span className="mt-3 inline-flex items-center gap-1.5 rounded-sm bg-accent/10 px-2.5 py-1 font-mono text-[10px] text-accent">
-          <span className="h-1.5 w-1.5 rounded-full bg-accent" />
-          Available for work
+        <span className="mt-3 inline-flex items-center gap-1.5 rounded-sm bg-white/[0.05] px-2.5 py-1 font-mono text-[10px] text-muted">
+          Fullstack · Web &amp; Mobile
         </span>
       </div>
 

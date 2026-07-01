@@ -49,12 +49,8 @@ export default function ContactPage() {
         <div className="mb-10">
           <h1 className="text-3xl font-bold text-white md:text-4xl">Let&apos;s Connect</h1>
           <p className="mt-2 text-muted">
-            Open to internships, freelance projects and fullstack roles.
+            Got something in mind? Pick whatever channel works best for you.
           </p>
-          <div className="mt-4 inline-flex items-center gap-2 rounded-full border border-accent/20 bg-accent/5 px-3 py-1.5">
-            <span className="h-2 w-2 rounded-full bg-accent" />
-            <span className="font-mono text-xs text-accent">Available for work · Usually quick to respond</span>
-          </div>
         </div>
 
         {/* Contact grid */}
