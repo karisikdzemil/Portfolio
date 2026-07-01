@@ -1,90 +1,129 @@
-import PageHeader from "@/components/ui/PageHeader";
-import { skillGroups, learning } from "@/data/skills";
+import { HiDesktopComputer, HiServer, HiCog } from "react-icons/hi";
+import {
+  SiJavascript,
+  SiTypescript,
+  SiReact,
+  SiNextdotjs,
+  SiExpo,
+  SiRedux,
+  SiTailwindcss,
+  SiFramer,
+  SiNodedotjs,
+  SiFirebase,
+  SiMongodb,
+  SiSocketdotio,
+  SiGit,
+  SiVercel,
+  SiJest,
+} from "react-icons/si";
+import { learning } from "@/data/skills";
 
 export const metadata = {
-  title: "Stack",
-  description:
-    "The tools a fullstack JavaScript engineer actually uses — frontend, backend, data, testing and tooling, with honest proficiency levels.",
+  title: "Skills",
+  description: "The tools a fullstack JavaScript engineer actually uses.",
 };
 
-const levelOrder = { Core: 0, Proficient: 1, Working: 2 };
+const categories = [
+  {
+    name: "Frontend",
+    categoryIcon: HiDesktopComputer,
+    accent: { text: "text-blue-400", bg: "bg-blue-500/10", border: "border-blue-500/20" },
+    items: [
+      { name: "React", icon: SiReact, color: "#61DAFB" },
+      { name: "Next.js", icon: SiNextdotjs, color: "#ffffff" },
+      { name: "TypeScript", icon: SiTypescript, color: "#3178C6" },
+      { name: "JavaScript", icon: SiJavascript, color: "#F7DF1E" },
+      { name: "React Native", icon: SiReact, color: "#61DAFB" },
+      { name: "Expo", icon: SiExpo, color: "#ffffff" },
+      { name: "Redux", icon: SiRedux, color: "#764ABC" },
+      { name: "Tailwind CSS", icon: SiTailwindcss, color: "#06B6D4" },
+      { name: "Framer Motion", icon: SiFramer, color: "#6B8AFF" },
+    ],
+  },
+  {
+    name: "Backend & Data",
+    categoryIcon: HiServer,
+    accent: { text: "text-green-400", bg: "bg-green-500/10", border: "border-green-500/20" },
+    items: [
+      { name: "Node.js", icon: SiNodedotjs, color: "#339933" },
+      { name: "Firebase", icon: SiFirebase, color: "#FFCA28" },
+      { name: "MongoDB", icon: SiMongodb, color: "#47A248" },
+      { name: "Socket.io", icon: SiSocketdotio, color: "#ffffff" },
+    ],
+  },
+  {
+    name: "Tools",
+    categoryIcon: HiCog,
+    accent: { text: "text-purple-400", bg: "bg-purple-500/10", border: "border-purple-500/20" },
+    items: [
+      { name: "Git", icon: SiGit, color: "#F05032" },
+      { name: "Vercel", icon: SiVercel, color: "#ffffff" },
+      { name: "Jest", icon: SiJest, color: "#C21325" },
+    ],
+  },
+];
 
 export default function SkillsPage() {
   return (
-    <>
-      <section className="border-b-2 border-white/10 bg-ink px-6 py-24 md:px-10">
-        <PageHeader
-          index="02"
-          label="Tech I Use"
-          title="Stack"
-          subtitle="I work across the full stack — from the database to the pixels users click. No padded lists: every level here reflects what I'd actually ship with today."
-        />
-      </section>
+    <div className="min-h-screen px-8 py-10 md:px-10 md:py-12">
+      <div className="mx-auto max-w-4xl space-y-8">
 
-      {skillGroups.map((group, i) => (
-        <section
-          key={group.category}
-          className={`border-b-2 px-6 py-20 md:px-10 ${
-            i % 2 === 0 ? "border-white/10 bg-ink" : "border-ink/10 bg-paper"
-          }`}
-        >
-          <div className="mx-auto max-w-6xl">
-            <div className={`flex items-baseline justify-between ${i % 2 === 0 ? "text-white" : "text-ink"}`}>
-              <h2 className="text-2xl font-bold uppercase tracking-tight md:text-3xl">{group.category}</h2>
-              <span className={`font-mono text-xs ${i % 2 === 0 ? "text-white/40" : "text-ink/40"}`}>
-                0{i + 1} / 0{skillGroups.length}
-              </span>
-            </div>
+        <div>
+          <h1 className="text-2xl font-bold text-white">Skills</h1>
+          <p className="mt-1 text-sm text-muted">The stack I build with, daily.</p>
+        </div>
 
-            <div className={`mt-8 divide-y-2 ${i % 2 === 0 ? "divide-white/10" : "divide-ink/10"}`}>
-              {[...group.items]
-                .sort((a, b) => levelOrder[a.level] - levelOrder[b.level])
-                .map((item) => (
+        <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-3">
+          {categories.map((cat) => (
+            <div
+              key={cat.name}
+              className={`rounded-xl border ${cat.accent.border} bg-ink-soft p-5`}
+            >
+              {/* Header */}
+              <div className="mb-5 flex items-center gap-3">
+                <div className={`rounded-lg ${cat.accent.bg} p-2`}>
+                  <cat.categoryIcon className={cat.accent.text} size={18} />
+                </div>
+                <h3 className="font-semibold text-white">{cat.name}</h3>
+              </div>
+
+              {/* Icon grid */}
+              <div className="grid grid-cols-3 gap-2">
+                {cat.items.map((item) => (
                   <div
                     key={item.name}
-                    className="group flex flex-col gap-2 py-5 transition-colors md:flex-row md:items-baseline md:justify-between md:gap-6"
+                    className="flex flex-col items-center gap-2 rounded-lg bg-white/[0.03] p-3 transition-colors hover:bg-white/[0.06]"
                   >
-                    <div className="flex items-baseline gap-4">
-                      <span className="block h-3 w-0 bg-accent transition-all group-hover:w-3" />
-                      <h3 className={`text-lg font-bold ${i % 2 === 0 ? "text-white" : "text-ink"}`}>
-                        {item.name}
-                      </h3>
-                      <span
-                        className={`font-mono text-xs uppercase tracking-[0.15em] ${
-                          i % 2 === 0 ? "text-accent" : "text-accent-dim"
-                        }`}
-                      >
-                        [{item.level}]
-                      </span>
-                    </div>
-                    <p className={`text-sm md:max-w-md md:text-right ${i % 2 === 0 ? "text-white/50" : "text-ink/50"}`}>
-                      {item.note}
-                    </p>
+                    <item.icon size={22} style={{ color: item.color }} />
+                    <span className="text-center font-mono text-[10px] leading-tight text-muted">
+                      {item.name}
+                    </span>
                   </div>
                 ))}
+              </div>
             </div>
-          </div>
-        </section>
-      ))}
+          ))}
+        </div>
 
-      <section className="bg-ink px-6 py-20 md:px-10">
-        <div className="mx-auto max-w-6xl">
-          <p className="flex items-center gap-2 font-mono text-xs uppercase tracking-[0.3em] text-accent">
-            <span className="inline-block h-2 w-2 bg-accent" />
+        {/* Currently learning */}
+        <div>
+          <h2 className="mb-4 font-mono text-xs uppercase tracking-[0.2em] text-muted">
             In Progress
-          </p>
-          <div className="mt-8 grid gap-px border-2 border-dashed border-white/20 bg-white/10 md:grid-cols-3">
+          </h2>
+          <div className="flex flex-wrap gap-2">
             {learning.map((item) => (
-              <div key={item.name} className="bg-ink p-6">
-                <h3 className="font-mono text-sm font-bold uppercase tracking-wider text-white">
-                  {item.name}
-                </h3>
-                <p className="mt-2 text-sm text-white/50">{item.note}</p>
+              <div
+                key={item.name}
+                className="rounded-lg border border-dashed border-white/15 bg-ink-soft px-4 py-2"
+              >
+                <span className="text-sm text-muted">{item.name}</span>
+                <p className="mt-0.5 text-xs text-muted/50">{item.note}</p>
               </div>
             ))}
           </div>
         </div>
-      </section>
-    </>
+
+      </div>
+    </div>
   );
 }
