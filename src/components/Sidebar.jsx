@@ -15,11 +15,13 @@ import {
   HiMenu,
   HiX,
   HiLocationMarker,
+  HiBriefcase,
 } from "react-icons/hi";
 
 const navLinks = [
   { href: "/", label: "Home", icon: HiHome },
   { href: "/about", label: "About", icon: HiUser },
+  { href: "/experience", label: "Experience", icon: HiBriefcase },
   { href: "/projects", label: "Projects", icon: HiFolderOpen },
   { href: "/skills", label: "Skills", icon: HiCode },
   { href: "/contact", label: "Contact", icon: HiMail },
