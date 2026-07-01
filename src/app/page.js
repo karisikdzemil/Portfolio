@@ -1,158 +1,119 @@
+import Image from "next/image";
 import Link from "next/link";
-import TypingEffect from "@/components/TypingEffect";
-import StatsSection from "@/components/StatsSection";
-import StackCodeBlock from "@/components/StackCodeBlock";
-import Button from "@/components/ui/Button";
 import { projects } from "@/data/projects";
+import GithubActivity from "@/components/GithubActivity";
 
-const focusAreas = [
-  {
-    index: "01",
-    title: "Frontend Engineering",
-    description:
-      "React and Next.js applications with state that doesn't fight you — clean component boundaries, predictable data flow.",
-  },
-  {
-    index: "02",
-    title: "Backend & APIs",
-    description:
-      "Node.js services and Firebase backends wired up to real auth, real data, and real-time updates, not mock JSON.",
-  },
-  {
-    index: "03",
-    title: "Mobile Apps",
-    description:
-      "Cross-platform apps with React Native and Expo, shipped to a store-ready state — not just a UI prototype.",
-  },
-  {
-    index: "04",
-    title: "Real-Time Systems",
-    description:
-      "WebSocket-driven features — live chat, presence, live data — built with Socket.io and Firestore listeners.",
-  },
+const quickStats = [
+  { value: "3+", label: "Years coding" },
+  { value: "4", label: "Projects shipped" },
+  { value: "2023", label: "Started uni" },
+  { value: "Open", label: "To opportunities" },
 ];
 
-const featured = projects.slice(0, 2);
-
 export default function Home() {
+  const featured = projects.slice(0, 2);
+
   return (
-    <>
-      <section className="flex min-h-[calc(100vh-4rem)] items-center border-b-2 border-white/10 bg-ink bg-grid px-6 py-20 md:px-10">
-        <div className="mx-auto grid w-full max-w-6xl gap-16 md:grid-cols-2 md:items-center">
-          <div className="animate-enter">
-            <p className="flex items-center gap-2 font-mono text-xs uppercase tracking-[0.3em] text-accent">
-              <span className="inline-block h-2 w-2 bg-accent" />
-              Available for work
-            </p>
-            <h1 className="mt-6 text-6xl font-bold uppercase leading-[0.92] tracking-tight text-white md:text-7xl">
-              Dzemil
-              <br />
-              Karisik
-            </h1>
-            <TypingEffect />
-            <p className="mt-6 max-w-md text-white/60">
-              Fullstack JavaScript engineer. I build web and mobile products
-              end to end — UI, state, backend, and the real-time bits in
-              between.
-            </p>
-            <div className="mt-10 flex flex-wrap gap-4">
-              <Button href="/projects" variant="solid">
-                View Work
-              </Button>
-              <Button href="/contact" variant="outline">
-                Get In Touch
-              </Button>
-            </div>
-          </div>
-
-          <div className="flex justify-center md:justify-end">
-            <StackCodeBlock />
-          </div>
-        </div>
-      </section>
-
-      <StatsSection />
-
-      <section className="border-b-2 border-white/10 bg-ink px-6 py-24 md:px-10">
-        <div className="mx-auto max-w-6xl">
-          <p className="flex items-center gap-2 font-mono text-xs uppercase tracking-[0.3em] text-accent">
-            <span className="inline-block h-2 w-2 bg-accent" />
-            What I Do
+    <div className="min-h-screen">
+      {/* Intro */}
+      <section className="border-b border-white/[0.07] px-8 pb-10 pt-10 md:px-10 md:pt-12">
+        <div className="mx-auto max-w-3xl">
+          <p className="font-mono text-xs uppercase tracking-[0.3em] text-accent">
+            Hello 👋
           </p>
-          <div className="mt-10 grid gap-px border-2 border-white/10 bg-white/10 md:grid-cols-2 lg:grid-cols-4">
-            {focusAreas.map((area) => (
-              <div key={area.index} className="bg-ink p-8">
-                <p className="font-mono text-sm text-accent">{area.index}</p>
-                <h3 className="mt-4 text-xl font-bold text-white">{area.title}</h3>
-                <p className="mt-3 text-sm text-white/60">{area.description}</p>
+          <h2 className="mt-3 text-2xl font-bold text-white md:text-3xl">
+            I&apos;m a fullstack JavaScript engineer
+          </h2>
+          <p className="mt-4 leading-relaxed text-muted">
+            I build web and mobile products end to end — UI, state, backend, and the real-time bits in between.
+            My core stack is{" "}
+            <span className="font-medium text-white">React, Next.js and TypeScript</span> on the frontend,
+            paired with{" "}
+            <span className="font-medium text-white">Node.js, Firebase and Socket.io</span> on the backend.
+            Currently studying Software Engineering at the State University of Novi Pazar.
+          </p>
+
+          <div className="mt-7 grid grid-cols-2 gap-2.5 sm:grid-cols-4">
+            {quickStats.map((stat) => (
+              <div
+                key={stat.label}
+                className="rounded border border-white/[0.07] bg-ink-soft p-4"
+              >
+                <p className="font-mono text-xl font-bold text-accent">{stat.value}</p>
+                <p className="mt-1 text-xs text-muted">{stat.label}</p>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      <section className="bg-paper px-6 py-24 text-ink md:px-10">
-        <div className="mx-auto max-w-6xl">
-          <div className="flex flex-wrap items-end justify-between gap-6">
-            <div>
-              <p className="flex items-center gap-2 font-mono text-xs uppercase tracking-[0.3em] text-accent-dim">
-                <span className="inline-block h-2 w-2 bg-accent" />
-                Selected Work
-              </p>
-              <h2 className="mt-4 text-4xl font-bold uppercase tracking-tight md:text-5xl">
-                Featured Projects
-              </h2>
-            </div>
+      {/* GitHub Activity */}
+      <section className="border-b border-white/[0.07] px-8 py-10 md:px-10">
+        <div className="mx-auto max-w-3xl">
+          <p className="mb-5 font-mono text-xs uppercase tracking-[0.3em] text-muted">
+            GitHub Activity
+          </p>
+          <GithubActivity />
+        </div>
+      </section>
+
+      {/* Featured Projects */}
+      <section className="px-8 py-10 md:px-10">
+        <div className="mx-auto max-w-3xl">
+          <div className="mb-5 flex items-center justify-between">
+            <p className="font-mono text-xs uppercase tracking-[0.3em] text-muted">
+              Featured Work
+            </p>
             <Link
               href="/projects"
-              className="font-mono text-sm uppercase tracking-wider text-ink underline hover:text-accent-dim"
+              className="font-mono text-xs text-accent transition-colors hover:text-accent-dim"
             >
-              View all work →
+              All projects →
             </Link>
           </div>
 
-          <div className="mt-12 grid gap-8 md:grid-cols-2">
+          <div className="space-y-3">
             {featured.map((project) => (
               <Link
                 key={project.slug}
                 href={`/projects/${project.slug}`}
-                className="group block border-2 border-ink bg-paper"
+                className="group flex items-center gap-4 rounded border border-white/[0.07] bg-ink-soft p-4 transition-all hover:border-accent/30 hover:bg-surface"
               >
-                <div className="border-b-2 border-ink p-6">
-                  <p className="font-mono text-xs uppercase tracking-[0.2em] text-ink/50">
-                    {project.year} / {project.role}
+                <div className="h-14 w-20 shrink-0 overflow-hidden rounded border border-white/[0.08]">
+                  <Image
+                    src={project.image}
+                    alt={project.title}
+                    width={80}
+                    height={56}
+                    className="h-full w-full object-cover grayscale transition-all group-hover:grayscale-0"
+                  />
+                </div>
+                <div className="min-w-0 flex-1">
+                  <h3 className="font-semibold text-white transition-colors group-hover:text-accent">
+                    {project.title}
+                  </h3>
+                  <p className="mt-0.5 truncate text-xs text-muted">
+                    {project.summary}
                   </p>
-                  <h3 className="mt-2 text-2xl font-bold">{project.title}</h3>
-                  <p className="mt-3 text-sm text-ink/70">{project.summary}</p>
+                  <div className="mt-1.5 flex flex-wrap gap-1.5">
+                    {project.tags.slice(0, 3).map((tag) => (
+                      <span
+                        key={tag}
+                        className="rounded border border-white/[0.08] px-1.5 py-0.5 font-mono text-[10px] text-muted"
+                      >
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
                 </div>
-                <div className="flex flex-wrap gap-2 p-6 pt-4">
-                  {project.tags.slice(0, 4).map((tag) => (
-                    <span
-                      key={tag}
-                      className="border border-ink/20 px-2 py-1 font-mono text-xs text-ink/70"
-                    >
-                      {tag}
-                    </span>
-                  ))}
-                </div>
+                <span className="shrink-0 text-muted transition-all group-hover:translate-x-0.5 group-hover:text-accent">
+                  →
+                </span>
               </Link>
             ))}
           </div>
         </div>
       </section>
-
-      <section className="border-t-2 border-white/10 bg-ink px-6 py-24 md:px-10">
-        <div className="mx-auto flex max-w-6xl flex-col items-start justify-between gap-8 md:flex-row md:items-center">
-          <h2 className="text-4xl font-bold uppercase leading-[0.95] tracking-tight text-white md:text-5xl">
-            Let&apos;s build
-            <br />
-            something.
-          </h2>
-          <Button href="/contact" variant="solid">
-            Start a conversation
-          </Button>
-        </div>
-      </section>
-    </>
+    </div>
   );
 }
