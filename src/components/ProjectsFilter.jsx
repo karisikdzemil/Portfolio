@@ -65,6 +65,7 @@ export default function ProjectsFilter({ projects }) {
                   className="object-cover transition-transform duration-500 group-hover:scale-[1.03]"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-ink-soft/80 via-ink-soft/10 to-transparent" />
+                <div className="absolute inset-0 bg-black/35 transition-opacity duration-300 group-hover:opacity-0" />
 
                 {/* Top badges */}
                 <div className="absolute top-3 left-3 flex gap-2">
