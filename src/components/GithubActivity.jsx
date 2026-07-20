@@ -1,8 +1,39 @@
 "use client";
 
 import { GitHubCalendar } from "react-github-calendar";
+import { useState, useEffect } from "react";
+
+function CalendarSkeleton() {
+  return (
+    <div className="space-y-2">
+      <div className="shimmer h-[112px] w-full rounded-lg" />
+      <div className="flex gap-2">
+        {[...Array(12)].map((_, i) => (
+          <div key={i} className="shimmer h-2.5 w-8 rounded-sm" />
+        ))}
+      </div>
+    </div>
+  );
+}
 
 export default function GithubActivity() {
+  const [mounted, setMounted] = useState(false);
+  const [hasError, setHasError] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  if (!mounted) return <CalendarSkeleton />;
+
+  if (hasError) {
+    return (
+      <div className="flex h-[112px] items-center justify-center rounded-lg border border-white/[0.06] bg-ink-soft">
+        <p className="font-mono text-xs text-muted">GitHub activity unavailable</p>
+      </div>
+    );
+  }
+
   return (
     <div className="overflow-x-auto">
       <GitHubCalendar
@@ -15,6 +46,7 @@ export default function GithubActivity() {
         blockMargin={3}
         fontSize={11}
         style={{ fontFamily: "var(--font-mono)", color: "#5c6478" }}
+        onError={() => setHasError(true)}
       />
     </div>
   );
