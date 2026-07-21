@@ -5,12 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
 import { FaGlobe, FaGithub } from "react-icons/fa";
-
-const filters = [
-  { label: "All",    value: "all"    },
-  { label: "Web",    value: "web"    },
-  { label: "Mobile", value: "mobile" },
-];
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const cardVariants = {
   hidden:  { opacity: 0, y: 24, scale: 0.98 },
@@ -29,6 +24,13 @@ const cardVariants = {
 
 export default function ProjectsFilter({ projects }) {
   const [active, setActive] = useState("all");
+  const { lang, t } = useLanguage();
+
+  const filters = [
+    { label: t("projects.filterAll"),    value: "all"    },
+    { label: "Web",                      value: "web"    },
+    { label: t("projects.filterMobile"), value: "mobile" },
+  ];
 
   const filtered =
     active === "all" ? projects : projects.filter((p) => p.type === active);
@@ -63,6 +65,7 @@ export default function ProjectsFilter({ projects }) {
       <div className="mt-5 grid gap-5 sm:grid-cols-2">
         <AnimatePresence mode="popLayout">
           {filtered.map((project, i) => {
+            const summary = lang === "sr" && project.summary_sr ? project.summary_sr : project.summary;
             const hasLive = project.links.some(
               (l) =>
                 l.label.toLowerCase().includes("live") ||
@@ -96,15 +99,13 @@ export default function ProjectsFilter({ projects }) {
                     priority={i === 0}
                     className="object-cover transition-transform duration-700 group-hover:scale-[1.05]"
                   />
-                  {/* Gradient overlay — always */}
                   <div className="absolute inset-0 bg-gradient-to-t from-ink-soft/90 via-ink-soft/20 to-transparent" />
-                  {/* Darken overlay that lifts on hover */}
                   <div className="absolute inset-0 bg-black/30 transition-opacity duration-500 group-hover:opacity-0" />
 
                   {/* Top-left badges */}
                   <div className="absolute left-3 top-3 flex gap-2">
                     <span className="rounded-full border border-white/20 bg-black/50 px-2.5 py-0.5 font-mono text-[10px] capitalize text-white/70 backdrop-blur-sm">
-                      {project.type}
+                      {project.type === "mobile" && lang === "sr" ? "mobilno" : project.type}
                     </span>
                     {hasLive && (
                       <span className="flex items-center gap-1.5 rounded-full border border-green-400/30 bg-black/50 px-2.5 py-0.5 font-mono text-[10px] text-green-400 backdrop-blur-sm">
@@ -126,7 +127,7 @@ export default function ProjectsFilter({ projects }) {
                     {project.title}
                   </h3>
                   <p className="mt-1.5 line-clamp-2 text-xs leading-relaxed text-muted">
-                    {project.summary}
+                    {summary}
                   </p>
 
                   <div className="mt-3 flex flex-wrap gap-1.5">
@@ -146,7 +147,7 @@ export default function ProjectsFilter({ projects }) {
                       href={`/projects/${project.slug}`}
                       className="flex-1 rounded-lg border border-white/[0.08] py-1.5 text-center font-mono text-[11px] text-muted transition-all duration-200 hover:border-accent/30 hover:text-accent"
                     >
-                      Case Study →
+                      {t("projects.details")}
                     </Link>
                     {liveLink && (
                       <a

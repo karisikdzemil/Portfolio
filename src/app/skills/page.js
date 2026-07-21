@@ -1,16 +1,17 @@
 "use client";
 
 import { useState, useMemo } from "react";
-import { HiDesktopComputer, HiServer, HiCog, HiSearch, HiSparkles } from "react-icons/hi";
+import { HiDesktopComputer, HiServer, HiCog, HiSearch } from "react-icons/hi";
 import {
   SiHtml5, SiSass, SiJavascript, SiTypescript, SiReact, SiNextdotjs,
   SiExpo, SiRedux, SiTailwindcss, SiFramer, SiWebflow,
   SiNodedotjs, SiExpress, SiNestjs, SiPostgresql, SiPrisma, SiMongodb,
   SiRedis, SiSocketdotio, SiDocker,
   SiGit, SiGithubactions, SiJest, SiGnubash, SiCloudinary, SiPostman,
-  SiVercel, SiNetlify, SiGraphql, SiKubernetes
+  SiVercel, SiNetlify
 } from "react-icons/si";
 import AnimatedSection from "@/components/AnimatedSection";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const categories = [
   {
@@ -92,19 +93,15 @@ const categories = [
   },
 ];
 
-const learning = [
-  { name: "GraphQL",    icon: SiGraphql,    color: "#E10098" },
-  { name: "Kubernetes", icon: SiKubernetes, color: "#326CE5" },
-];
-
-const FILTERS = [
-  { id: "all", label: "All" },
-  ...categories.map((c) => ({ id: c.id, label: c.name })),
-];
-
 export default function SkillsPage() {
   const [filter, setFilter] = useState("all");
   const [query, setQuery] = useState("");
+  const { lang, t } = useLanguage();
+
+  const FILTERS = [
+    { id: "all", label: t("skills.filterAll") },
+    ...categories.map((c) => ({ id: c.id, label: c.name })),
+  ];
 
   const visible = useMemo(() => {
     const q = query.trim().toLowerCase();
@@ -124,7 +121,6 @@ export default function SkillsPage() {
   }, [filter, query]);
 
   const totalTools = categories.reduce((n, c) => n + c.items.length, 0);
-  const matchCount = visible.reduce((n, c) => n + c.items.length, 0);
 
   return (
     <div className="min-h-screen px-8 py-10 md:px-10 md:py-12">
@@ -133,13 +129,16 @@ export default function SkillsPage() {
         {/* Header */}
         <AnimatedSection>
           <p className="font-mono text-xs uppercase tracking-[0.25em] text-accent">
-            Tech Stack
+            {t("skills.label")}
           </p>
-          <h1 className="mt-2 text-2xl font-bold text-white">Skills</h1>
+          <h1 className="mt-2 text-2xl font-bold text-white">{t("skills.title")}</h1>
           <p className="mt-1 text-sm text-muted">
-            The stack I build with, daily.{" "}
+            {t("skills.subtitle")}{" "}
             <span className="font-mono text-xs text-white/40">
-              — {totalTools} tools across {categories.length} domains
+              —{" "}
+              {lang === "sr"
+                ? `${totalTools} alata u ${categories.length} oblasti`
+                : `${totalTools} tools across ${categories.length} domains`}
             </span>
           </p>
         </AnimatedSection>
@@ -174,7 +173,7 @@ export default function SkillsPage() {
               <input
                 value={query}
                 onChange={(e) => setQuery(e.target.value)}
-                placeholder="search a tool…"
+                placeholder={t("skills.searchPlaceholder")}
                 className="w-full rounded-lg border border-white/[0.06] bg-white/[0.02] py-1.5 pl-8 pr-3 font-mono text-[11px] text-white placeholder:text-white/25 outline-none transition-colors focus:border-white/20"
               />
             </div>
@@ -185,7 +184,7 @@ export default function SkillsPage() {
         {visible.length === 0 ? (
           <div className="rounded-xl border border-white/[0.06] bg-white/[0.02] p-10 text-center">
             <p className="font-mono text-xs text-muted">
-              No tools match “{query}”.
+              {t("skills.noResults")} &quot;{query}&quot;.
             </p>
           </div>
         ) : (
@@ -208,7 +207,7 @@ export default function SkillsPage() {
                       </div>
                       <h3 className="font-semibold text-white">{cat.name}</h3>
                       <span className="ml-auto font-mono text-[10px] text-muted">
-                        {cat.items.length} tools
+                        {cat.items.length} {t("skills.toolsSuffix")}
                       </span>
                     </div>
 
@@ -254,33 +253,6 @@ export default function SkillsPage() {
             ))}
           </div>
         )}
-
-        {/* <AnimatedSection delay={0.35}>
-          <div className="rounded-xl border border-white/[0.06] bg-white/[0.02] p-5">
-            <div className="flex flex-wrap items-center gap-4">
-              <div className="flex items-center gap-2">
-                <HiSparkles size={15} className="text-accent" />
-                <span className="font-mono text-[11px] uppercase tracking-[0.2em] text-muted">
-                  Currently learning
-                </span>
-              </div>
-              <div className="flex flex-wrap gap-2">
-                {learning.map((l) => (
-                  <div
-                    key={l.name}
-                    className="flex items-center gap-2 rounded-lg border border-white/[0.06] bg-white/[0.02] px-3 py-1.5 transition-colors hover:border-white/[0.12]"
-                  >
-                    <l.icon size={14} style={{ color: l.color }} />
-                    <span className="font-mono text-[10px] text-muted">{l.name}</span>
-                  </div>
-                ))}
-              </div>
-              <span className="ml-auto font-mono text-[10px] text-white/30">
-                {matchCount}/{totalTools} shown
-              </span>
-            </div>
-          </div>
-        </AnimatedSection> */}
 
       </div>
 

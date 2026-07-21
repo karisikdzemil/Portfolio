@@ -2,6 +2,7 @@
 
 import { GitHubCalendar } from "react-github-calendar";
 import { useState, useEffect } from "react";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 function CalendarSkeleton() {
   return (
@@ -19,6 +20,7 @@ function CalendarSkeleton() {
 export default function GithubActivity() {
   const [mounted, setMounted] = useState(false);
   const [hasError, setHasError] = useState(false);
+  const { t } = useLanguage();
 
   useEffect(() => {
     setMounted(true);
@@ -29,7 +31,7 @@ export default function GithubActivity() {
   if (hasError) {
     return (
       <div className="flex h-[112px] items-center justify-center rounded-lg border border-white/[0.06] bg-ink-soft">
-        <p className="font-mono text-xs text-muted">GitHub activity unavailable</p>
+        <p className="font-mono text-xs text-muted">{t("github.unavailable")}</p>
       </div>
     );
   }

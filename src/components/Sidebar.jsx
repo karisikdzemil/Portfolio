@@ -17,31 +17,32 @@ import {
   HiLocationMarker,
   HiBriefcase,
 } from "react-icons/hi";
+import { useLanguage } from "@/contexts/LanguageContext";
 
-const navLinks = [
-  { href: "/",           label: "Home",       icon: HiHome       },
-  { href: "/about",      label: "About",      icon: HiUser       },
-  { href: "/experience", label: "Experience", icon: HiBriefcase  },
-  { href: "/projects",   label: "Projects",   icon: HiFolderOpen },
-  { href: "/skills",     label: "Skills",     icon: HiCode       },
-  { href: "/contact",    label: "Contact",    icon: HiMail       },
+const navKeys = [
+  { href: "/",           key: "home",       icon: HiHome       },
+  { href: "/about",      key: "about",      icon: HiUser       },
+  { href: "/experience", key: "experience", icon: HiBriefcase  },
+  { href: "/projects",   key: "projects",   icon: HiFolderOpen },
+  { href: "/skills",     key: "skills",     icon: HiCode       },
+  { href: "/contact",    key: "contact",    icon: HiMail       },
 ];
 
 const socials = [
-  { href: "https://github.com/karisikdzemil",                            icon: FaGithub,   label: "GitHub",   color: "#e4e4e7" },
+  { href: "https://github.com/karisikdzemil",                                icon: FaGithub,   label: "GitHub",   color: "#e4e4e7" },
   { href: "https://www.linkedin.com/in/d%C5%BEemil-kari%C5%A1ik-37b964253/", icon: FaLinkedin, label: "LinkedIn", color: "#0A66C2" },
-  { href: "mailto:karisikdzemil@gmail.com",                              icon: FaEnvelope, label: "Email",    color: "#f59e0b" },
+  { href: "mailto:karisikdzemil@gmail.com",                                  icon: FaEnvelope, label: "Email",    color: "#f59e0b" },
 ];
 
 function SidebarContent({ onClose }) {
   const pathname = usePathname();
+  const { lang, setLang, t } = useLanguage();
 
   return (
     <div className="flex h-full flex-col p-5">
       {/* Profile */}
       <div className="flex flex-col items-center pt-4 text-center">
         <div className="relative">
-          {/* Glow ring */}
           <div className="absolute -inset-1 rounded-full bg-accent/20 blur-md animate-glow" />
           <div className="relative h-[88px] w-[88px] overflow-hidden rounded-full border-2 border-accent/30 ring-4 ring-accent/10">
             <Image
@@ -55,9 +56,9 @@ function SidebarContent({ onClose }) {
           </div>
         </div>
         <h1 className="mt-4 text-sm font-bold text-white">Dzemil Karisik</h1>
-        <p className="mt-0.5 font-mono text-[11px] text-muted">Fullstack JS Engineer</p>
+        <p className="mt-0.5 font-mono text-[11px] text-muted">{t("nav.role")}</p>
         <span className="mt-3 inline-flex items-center gap-1.5 rounded-full border border-white/[0.07] bg-white/[0.04] px-3 py-1 font-mono text-[10px] text-muted">
-          Fullstack · Web &amp; Mobile
+          {t("nav.type")}
         </span>
       </div>
 
@@ -85,12 +86,10 @@ function SidebarContent({ onClose }) {
             rel="noopener noreferrer"
             aria-label={label}
             className="group flex h-8 w-8 items-center justify-center rounded-lg border border-white/[0.07] text-muted transition-all duration-200 hover:border-white/20"
-            style={{ "--social-color": color }}
           >
             <Icon
               size={13}
               className="transition-colors duration-200"
-              style={{ color: undefined }}
               onMouseEnter={(e) => (e.currentTarget.style.color = color)}
               onMouseLeave={(e) => (e.currentTarget.style.color = "")}
             />
@@ -102,7 +101,7 @@ function SidebarContent({ onClose }) {
 
       {/* Navigation */}
       <nav className="flex flex-col gap-0.5">
-        {navLinks.map(({ href, label, icon: Icon }) => {
+        {navKeys.map(({ href, key, icon: Icon }) => {
           const active = href === "/" ? pathname === "/" : pathname.startsWith(href);
           return (
             <Link
@@ -116,7 +115,7 @@ function SidebarContent({ onClose }) {
               }`}
             >
               <Icon size={15} className="shrink-0" />
-              <span>{label}</span>
+              <span>{t(`nav.${key}`)}</span>
               {active && (
                 <motion.span
                   layoutId="nav-indicator"
@@ -128,8 +127,27 @@ function SidebarContent({ onClose }) {
         })}
       </nav>
 
-      <div className="mt-auto pt-6 font-mono text-[10px] text-white/15">
-        © 2026 Dzemil Karisik
+      {/* Language toggle + copyright */}
+      <div className="mt-auto pt-5">
+        <div className="mb-3 flex items-center gap-1.5">
+          <span className="mr-0.5 font-mono text-[9px] uppercase tracking-[0.15em] text-white/20">
+            Lang
+          </span>
+          {["en", "sr"].map((l) => (
+            <button
+              key={l}
+              onClick={() => setLang(l)}
+              className={`rounded px-2 py-0.5 font-mono text-[10px] uppercase transition-all duration-200 ${
+                lang === l
+                  ? "border border-accent/30 bg-accent/15 text-accent"
+                  : "text-white/25 hover:text-white/50"
+              }`}
+            >
+              {l}
+            </button>
+          ))}
+        </div>
+        <div className="font-mono text-[10px] text-white/15">© 2026 Dzemil Karisik</div>
       </div>
     </div>
   );

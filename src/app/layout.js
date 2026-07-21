@@ -1,5 +1,6 @@
 import { Space_Grotesk, JetBrains_Mono } from "next/font/google";
 import Sidebar from "@/components/Sidebar";
+import { LanguageProvider } from "@/contexts/LanguageContext";
 import "./globals.css";
 
 const spaceGrotesk = Space_Grotesk({
@@ -72,10 +73,12 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en" className={`${spaceGrotesk.variable} ${jetbrainsMono.variable}`}>
       <body className="bg-ink font-sans text-white antialiased">
-        <Sidebar />
-        <main className="min-h-screen pt-14 md:ml-[260px] md:pt-0">
-          {children}
-        </main>
+        <LanguageProvider>
+          <Sidebar />
+          <main className="min-h-screen pt-14 md:ml-[260px] md:pt-0">
+            {children}
+          </main>
+        </LanguageProvider>
       </body>
     </html>
   );
