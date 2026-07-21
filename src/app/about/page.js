@@ -5,7 +5,8 @@ import AnimatedSection from "@/components/AnimatedSection";
 
 export const metadata = {
   title: "About",
-  description: "Fullstack JavaScript engineer and software engineering student.",
+  description:
+    "Fullstack JavaScript engineer and software engineering student.",
 };
 
 const uniTopics = [
@@ -18,53 +19,79 @@ const uniTopics = [
 ];
 
 const courses = [
-  { period: "2024", title: "React — The Complete Guide",       org: "Udemy — Maximilian Schwarzmüller"  },
-  { period: "2024", title: "JavaScript — The Complete Guide",  org: "Udemy — Maximilian Schwarzmüller"  },
-  { period: "2022", title: "Certified Front-End Developer",    org: "RISC & NIT / IT Camp Serbia"       },
-  { period: "2022", title: "Web Development Fundamentals",     org: "RISC & NIT / IT Camp Serbia"       },
+  {
+    period: "2024",
+    title: "React — The Complete Guide",
+    org: "Udemy — Maximilian Schwarzmüller",
+  },
+  {
+    period: "2024",
+    title: "JavaScript — The Complete Guide",
+    org: "Udemy — Maximilian Schwarzmüller",
+  },
+  {
+    period: "2022",
+    title: "Certified Front-End Developer",
+    org: "RISC & NIT / IT Camp Serbia",
+  },
+  {
+    period: "2022",
+    title: "Web Development Fundamentals",
+    org: "RISC & NIT / IT Camp Serbia",
+  },
 ];
 
 export default function AboutPage() {
   return (
     <div className="min-h-screen px-8 py-10 md:px-10 md:py-12">
       <div className="mx-auto max-w-3xl space-y-14">
-
         {/* ── Bio + Photo ─────────────────────────────── */}
         <AnimatedSection className="flex flex-col-reverse gap-8 sm:flex-row sm:items-start">
           <div className="flex-1 space-y-4">
             <div>
-              <p className="font-mono text-xs uppercase tracking-[0.25em] text-accent">About me</p>
-              <h1 className="mt-2 text-2xl font-bold text-white">Dzemil Karisik</h1>
+              <p className="font-mono text-xs uppercase tracking-[0.25em] text-accent">
+                About me
+              </p>
+              <h1 className="mt-2 text-2xl font-bold text-white">
+                Dzemil Karisik
+              </h1>
             </div>
             <div className="space-y-3 leading-relaxed text-muted">
               <p>
-                I&apos;m a{" "}
-                <span className="font-medium text-white">fullstack JavaScript engineer</span> and
-                software engineering student at the State University of Novi Pazar. I build
-                products end to end — frontend, backend, data, and real-time features.
+                My journey in software engineering started in 2022, driven by a
+                deep curiosity for how complex web platforms operate under the
+                hood. Today, I&apos;m an Informatics student at the{" "}
+                <span className="font-medium text-white">
+                  University of Novi Pazar
+                </span>
+                , actively balancing academic fundamentals with building
+                production-grade software.
               </p>
               <p>
-                My core stack is{" "}
+                I take an engineering-first approach to development—focusing not
+                just on making things look great, but ensuring the underlying
+                systems are maintainable, efficient, and well-structured. Beyond
+                writing code, I thrive in collaborative environments where{" "}
                 <span className="font-medium text-white">
-                  React, Next.js, TypeScript and React Native
+                  clear communication, adaptability, and active problem-solving
                 </span>{" "}
-                on the frontend, paired with{" "}
-                <span className="font-medium text-white">Node.js, Firebase and Socket.io</span> on
-                the backend.
+                keep projects moving forward smoothly.
               </p>
             </div>
             <div className="rounded-xl border border-accent/20 bg-gradient-to-br from-accent/[0.08] to-transparent p-4">
-              <p className="font-mono text-[10px] uppercase tracking-[0.2em] text-accent">Currently</p>
+              <p className="font-mono text-[10px] uppercase tracking-[0.2em] text-accent">
+                Currently
+              </p>
               <p className="mt-1.5 text-sm text-white/70">
-                Going deeper on the backend — moving past Firestore into relational data modeling
-                with PostgreSQL and Prisma.
+                Engineering production-grade web applications at FWRD Digital,
+                while continuously deepening my knowledge in backend systems and
+                software architecture.
               </p>
             </div>
           </div>
 
           <div className="sm:shrink-0">
             <div className="relative">
-              {/* Decorative glow behind photo */}
               <div className="absolute -inset-2 rounded-2xl bg-accent/[0.06] blur-xl" />
               <div className="relative h-40 w-32 overflow-hidden rounded-xl border border-white/10 sm:h-48 sm:w-36">
                 <Image
@@ -79,15 +106,12 @@ export default function AboutPage() {
           </div>
         </AnimatedSection>
 
-        {/* ── Education ───────────────────────────────── */}
         <AnimatedSection delay={0.1}>
           <h2 className="mb-5 font-mono text-xs uppercase tracking-[0.25em] text-muted">
             Education &amp; Courses
           </h2>
 
-          {/* University card */}
           <div className="mb-4 overflow-hidden rounded-xl border border-white/[0.08] bg-ink-soft">
-            {/* Top accent bar */}
             <div className="h-[3px] w-full bg-gradient-to-r from-accent via-amber-300 to-transparent" />
             <div className="p-6">
               <div className="flex flex-wrap items-start justify-between gap-3">
@@ -95,36 +119,42 @@ export default function AboutPage() {
                   <span className="inline-block rounded-full bg-accent/10 px-2.5 py-0.5 font-mono text-[10px] text-accent">
                     University
                   </span>
-                  <h3 className="mt-2 text-base font-bold text-white">Software Engineering Student</h3>
+                  <h3 className="mt-2 text-base font-bold text-white">
+                    Software Engineering Student
+                  </h3>
                   <p className="mt-0.5 text-sm italic text-muted">
                     State University of Novi Pazar, Serbia
                   </p>
                 </div>
-                <span className="font-mono text-xs text-accent">2023 — Present</span>
+                <span className="font-mono text-xs text-accent">
+                  2023 — Present
+                </span>
               </div>
 
-              {/* Progress */}
               <div className="mt-5">
                 <div className="mb-2 flex items-center justify-between">
-                  <span className="font-mono text-[10px] text-muted">Progress</span>
-                  <span className="font-mono text-[10px] text-accent">2nd year · 50%</span>
+                  <span className="font-mono text-[10px] text-muted">
+                    Progress
+                  </span>
+                  <span className="font-mono text-[10px] text-accent">
+                    3rd year · 75%
+                  </span>
                 </div>
                 <div className="relative h-1.5 w-full overflow-hidden rounded-full bg-white/[0.06]">
-                  <div className="h-full w-1/2 rounded-full bg-gradient-to-r from-accent to-amber-300 shadow-[0_0_12px_rgba(245,158,11,0.5)]" />
+                  <div className="h-full w-3/4 rounded-full bg-gradient-to-r from-accent to-amber-300 shadow-[0_0_12px_rgba(245,158,11,0.5)]" />
                 </div>
                 <div className="mt-2 flex justify-between">
                   {["1st", "2nd", "3rd", "4th"].map((yr, i) => (
                     <span
                       key={yr}
-                      className={`font-mono text-[10px] ${i <= 1 ? "text-accent/70" : "text-muted/25"}`}
+                      className={`font-mono text-[10px] ${i <= 2 ? "text-accent/70" : "text-muted/25"}`}
                     >
-                      {yr}yr
+                      {yr} yr
                     </span>
                   ))}
                 </div>
               </div>
 
-              {/* Topics */}
               <div className="mt-4 border-t border-white/[0.07] pt-4">
                 <p className="mb-2.5 font-mono text-[10px] uppercase tracking-[0.15em] text-muted/50">
                   Covered Topics
@@ -157,18 +187,21 @@ export default function AboutPage() {
                     <HiCheckCircle className="text-accent" size={14} />
                   </div>
                   <div className="min-w-0 flex-1">
-                    <p className="text-sm font-medium text-white">{item.title}</p>
+                    <p className="text-sm font-medium text-white">
+                      {item.title}
+                    </p>
                     <p className="mt-0.5 text-xs text-muted">{item.org}</p>
                   </div>
-                  <span className="shrink-0 font-mono text-xs text-muted/50">{item.period}</span>
+                  <span className="shrink-0 font-mono text-xs text-muted/50">
+                    {item.period}
+                  </span>
                 </div>
               ))}
             </div>
           </div>
         </AnimatedSection>
 
-        {/* ── Currently learning ──────────────────────── */}
-        <AnimatedSection delay={0.15}>
+        {/* <AnimatedSection delay={0.15}>
           <h2 className="mb-4 font-mono text-xs uppercase tracking-[0.25em] text-muted">
             Currently Learning
           </h2>
@@ -185,8 +218,7 @@ export default function AboutPage() {
               </div>
             ))}
           </div>
-        </AnimatedSection>
-
+        </AnimatedSection> */}
       </div>
     </div>
   );

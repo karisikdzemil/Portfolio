@@ -9,8 +9,8 @@ import { HiArrowRight } from "react-icons/hi";
 
 const quickStats = [
   { value: "3+", label: "Years coding" },
-  { value: "5",  label: "Projects shipped" },
-  { value: "2",  label: "Platforms" },
+  { value: "5", label: "Projects shipped" },
+  { value: "2", label: "Platforms" },
   { value: "2023", label: "Started uni" },
 ];
 
@@ -20,8 +20,12 @@ const stagger = {
 };
 
 const fadeUp = {
-  hidden:  { opacity: 0, y: 20 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.55, ease: [0.21, 0.47, 0.32, 0.98] } },
+  hidden: { opacity: 0, y: 20 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.55, ease: [0.21, 0.47, 0.32, 0.98] },
+  },
 };
 
 export default function Home() {
@@ -29,7 +33,6 @@ export default function Home() {
 
   return (
     <div className="min-h-screen">
-
       {/* ── Hero ─────────────────────────────────────── */}
       <section className="relative overflow-hidden border-b border-white/[0.06] px-8 pb-12 pt-12 md:px-10 md:pt-14">
         {/* Ambient glows */}
@@ -42,7 +45,10 @@ export default function Home() {
           initial="hidden"
           animate="visible"
         >
-          <motion.p variants={fadeUp} className="font-mono text-xs uppercase tracking-[0.3em] text-accent">
+          <motion.p
+            variants={fadeUp}
+            className="font-mono text-xs uppercase tracking-[0.3em] text-accent"
+          >
             Hello, I&apos;m Dzemil
           </motion.p>
 
@@ -55,15 +61,31 @@ export default function Home() {
             <span className="gradient-heading">Engineer</span>
           </motion.h1>
 
-          <motion.p variants={fadeUp} className="mt-5 max-w-xl leading-relaxed text-muted">
-            I build web and mobile products end to end — UI, state, backend,
-            and real-time. Core stack:{" "}
-            <span className="font-medium text-white/80">React, Next.js, TypeScript</span>{" "}
-            on the frontend,{" "}
-            <span className="font-medium text-white/80">Node.js and MongoDB</span>{" "}
-            on the backend. Currently studying Software Engineering at the State University of Novi Pazar.
+          <motion.p
+            variants={fadeUp}
+            className="mt-5 max-w-xl leading-relaxed text-muted"
+          >
+            Hi! {"I'm"} Džemil, a{" "}
+            <span className="font-medium text-white/80">
+              full-stack engineer
+            </span>{" "}
+            and Informatics student at the{" "}
+            <span className="font-medium text-white/80">
+              University of Novi Pazar
+            </span>
+            . {"I'm"} genuinely passionate about building modern web and mobile
+            applications, driven by a constant hunger to{" "}
+            <span className="font-medium text-white/80">
+              learn new technologies
+            </span>{" "}
+            and grow. As a developer, I pride myself on being{" "}
+            <span className="font-medium text-white/80">
+              resourceful, persistent, and highly communicative
+            </span>
+             {" "}always finding clever solutions to complex problems and bringing
+            strong collaboration to any team.
           </motion.p>
-
+          {/* 
           <motion.div
             variants={fadeUp}
             className="mt-8 grid grid-cols-2 gap-3 sm:grid-cols-4"
@@ -77,7 +99,7 @@ export default function Home() {
                 <p className="mt-1 text-xs text-muted">{stat.label}</p>
               </div>
             ))}
-          </motion.div>
+          </motion.div> */}
         </motion.div>
       </section>
 
@@ -116,7 +138,11 @@ export default function Home() {
                 key={project.slug}
                 initial={{ opacity: 0, y: 16 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: 0.35 + i * 0.1, ease: [0.21, 0.47, 0.32, 0.98] }}
+                transition={{
+                  duration: 0.5,
+                  delay: 0.35 + i * 0.1,
+                  ease: [0.21, 0.47, 0.32, 0.98],
+                }}
               >
                 <Link
                   href={`/projects/${project.slug}`}
@@ -159,7 +185,6 @@ export default function Home() {
           </div>
         </div>
       </section>
-
     </div>
   );
 }

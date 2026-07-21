@@ -36,6 +36,61 @@ export const projects = [
     ],
   },
   {
+    slug: "shopnative",
+    title: "ShopNative",
+    type: "mobile",
+    year: "2023",
+    role: "Solo developer",
+    summary:
+      "A fully featured e-commerce mobile app built with React Native and Expo, from browsing to checkout to order history.",
+    description:
+      "A fully featured e-commerce mobile app that allows users to create an account, browse products, manage favorites, search by category, add items to cart, enter payment methods and delivery addresses, place orders, and view their order history. Built with React Native and Expo, and powered by Firebase for real-time data and authentication.",
+    image: "/shopnative.png",
+    tags: [
+      "React Native",
+      "Expo",
+      "Firebase",
+      "Tailwind CSS",
+      "Redux Toolkit",
+      "eCommerce API",
+    ],
+    links: [
+      { label: "Expo Demo", href: "https://expo.dev/accounts/dzemilk/projects/ShopNative" },
+      { label: "GitHub", href: "https://github.com/karisikdzemil/ShopNative" },
+    ],
+    problem:
+      "I wanted to ship something that felt like a real, store-ready e-commerce app rather than a UI prototype — covering the full purchase flow, not just product listings.",
+    approach: [
+      "Built with React Native and Expo for cross-platform delivery, styled with Tailwind utility classes.",
+      "Firebase for authentication and real-time product/order data, Redux Toolkit for cart and checkout state.",
+      "Implemented the full flow end to end: browse by category, favorites, cart, addresses, payment methods, order placement and order history.",
+    ],
+  },
+  {
+    slug: "vibely",
+    title: "Vibely",
+    type: "web",
+    year: "2024",
+    role: "Solo developer",
+    summary:
+      "A full social media platform with auth, posts, profiles, follow system and real-time feeds — built end to end.",
+    description:
+      "A feature-rich social media platform with user authentication, post creation and deletion, profile editing, dark mode, comments, likes, following system, and suggested users – all wrapped in a clean UI.",
+    image: "/vibely.png",
+    tags: ["React.js", "Tailwind CSS", "Redux Toolkit", "Firestore"],
+    links: [
+      { label: "Live Demo", href: "https://vibely-2628d.web.app/" },
+      { label: "GitHub", href: "https://github.com/karisikdzemil/Vibely" },
+    ],
+    problem:
+      "I wanted to prove out a complete product feature set — not just a CRUD demo — covering the parts of a social app that are easy to skip: following, suggested users, dark mode, and real-time updates.",
+    approach: [
+      "React + Tailwind CSS frontend with Redux Toolkit handling global state for auth, theme, and feed data.",
+      "Firestore as the backend for posts, comments, likes and the following graph, with real-time listeners keeping feeds in sync across sessions.",
+      "Dark mode and profile editing built on the same state layer as the rest of the app, rather than bolted on separately.",
+    ],
+  },
+  {
     slug: "retrovibe",
     title: "RetroVibe",
     type: "web",
@@ -70,30 +125,6 @@ export const projects = [
     ],
   },
   {
-    slug: "vibely",
-    title: "Vibely",
-    type: "web",
-    year: "2024",
-    role: "Solo developer",
-    summary:
-      "A full social media platform with auth, posts, profiles, follow system and real-time feeds — built end to end.",
-    description:
-      "A feature-rich social media platform with user authentication, post creation and deletion, profile editing, dark mode, comments, likes, following system, and suggested users – all wrapped in a clean UI.",
-    image: "/vibely.png",
-    tags: ["React.js", "Tailwind CSS", "Redux Toolkit", "Firestore"],
-    links: [
-      { label: "Live Demo", href: "https://vibely-2628d.web.app/" },
-      { label: "GitHub", href: "https://github.com/karisikdzemil/Vibely" },
-    ],
-    problem:
-      "I wanted to prove out a complete product feature set — not just a CRUD demo — covering the parts of a social app that are easy to skip: following, suggested users, dark mode, and real-time updates.",
-    approach: [
-      "React + Tailwind CSS frontend with Redux Toolkit handling global state for auth, theme, and feed data.",
-      "Firestore as the backend for posts, comments, likes and the following graph, with real-time listeners keeping feeds in sync across sessions.",
-      "Dark mode and profile editing built on the same state layer as the rest of the app, rather than bolted on separately.",
-    ],
-  },
-  {
     slug: "crypto-exchange-simulator",
     title: "Crypto Exchange Simulator",
     type: "web",
@@ -122,37 +153,6 @@ export const projects = [
       "Pulled live price data from the CoinMarketCap API and rendered trend charts with Chart.js.",
       "Used Context API for the simulated balance and portfolio state, with Firestore persisting transaction history per user.",
       "Built a full demo trading flow — buy, sell, balance updates, transaction log — that mirrors how a real exchange manages state.",
-    ],
-  },
-  {
-    slug: "shopnative",
-    title: "ShopNative",
-    type: "mobile",
-    year: "2023",
-    role: "Solo developer",
-    summary:
-      "A fully featured e-commerce mobile app built with React Native and Expo, from browsing to checkout to order history.",
-    description:
-      "A fully featured e-commerce mobile app that allows users to create an account, browse products, manage favorites, search by category, add items to cart, enter payment methods and delivery addresses, place orders, and view their order history. Built with React Native and Expo, and powered by Firebase for real-time data and authentication.",
-    image: "/shopnative.png",
-    tags: [
-      "React Native",
-      "Expo",
-      "Firebase",
-      "Tailwind CSS",
-      "Redux Toolkit",
-      "eCommerce API",
-    ],
-    links: [
-      { label: "Expo Demo", href: "https://expo.dev/accounts/dzemilk/projects/ShopNative" },
-      { label: "GitHub", href: "https://github.com/karisikdzemil/ShopNative" },
-    ],
-    problem:
-      "I wanted to ship something that felt like a real, store-ready e-commerce app rather than a UI prototype — covering the full purchase flow, not just product listings.",
-    approach: [
-      "Built with React Native and Expo for cross-platform delivery, styled with Tailwind utility classes.",
-      "Firebase for authentication and real-time product/order data, Redux Toolkit for cart and checkout state.",
-      "Implemented the full flow end to end: browse by category, favorites, cart, addresses, payment methods, order placement and order history.",
     ],
   },
 ];

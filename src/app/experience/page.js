@@ -2,7 +2,8 @@ import AnimatedSection from "@/components/AnimatedSection";
 
 export const metadata = {
   title: "Experience",
-  description: "Professional experience — web development work and client projects.",
+  description:
+    "Professional experience — web development work and client projects.",
 };
 
 const experience = [
@@ -13,35 +14,47 @@ const experience = [
     current: true,
     location: "Remote",
     description: [
-      "Working on the maintenance and active development of multiple client-facing products built in Next.js — implementing new features, resolving issues across live codebases, and improving overall performance and code quality.",
-      "Involved across the full development cycle: from scoping and planning through implementation, code review, and deployment. Working on real production apps with real users, which has sharpened how I approach building and debugging.",
-      "Also delivering Webflow projects end-to-end for select clients, handling everything from initial setup to launch.",
+      "Actively developing and maintaining high-performance, client-facing web applications—optimizing live codebases, implementing modern architecture patterns, and ensuring code quality.",
+      "Engaged in the full product lifecycle: from initial architectural scoping and planning to strict code reviews, API integrations, and continuous deployments.",
+      "Engineered and launched custom Webflow digital platforms end-to-end for select enterprise clients, incorporating advanced JavaScript logic and custom styling.",
     ],
-    tags: ["Next.js", "React", "TypeScript", "Tailwind CSS", "Webflow"],
-  },
-  {
-    company: "Freelance",
-    role: "Web Developer",
-    period: "Aug 2024 — Aug 2025",
-    current: false,
-    location: "Remote",
-    description: [
-      "Worked independently with clients to scope, build and ship custom web projects end to end — covering everything from requirements and planning through to deployment and handoff.",
-      "Built web applications and landing pages primarily with React and Next.js, with Firebase handling authentication and real-time data on the backend. Managed client communication, timelines, and delivery solo.",
+    tags: [
+      "Next.js",
+      "TypeScript",
+      "Node.js",
+      "REST APIs",
+      "Tailwind CSS",
+      "Webflow",
     ],
-    tags: ["React", "Next.js", "Firebase", "Tailwind CSS", "Node.js"],
   },
+ {
+  company: "Freelance",
+  role: "Full-stack Developer",
+  period: "Aug 2023 — Aug 2025",
+  current: false,
+  location: "Remote",
+  description: [
+  "Architected and delivered custom web applications end-to-end—managing everything from system requirements and UI development to database design and production deployment.",
+  "Engineered scalable full-stack products with a focus on system performance, secure authentication flows, and seamless real-time data management.",
+],
+  tags: ["React", "Next.js", "Node.js", "Express", "Tailwind CSS", "MongoDB"],
+}
 ];
 
 export default function ExperiencePage() {
   return (
     <div className="min-h-screen px-8 py-10 md:px-10 md:py-12">
       <div className="mx-auto max-w-3xl">
-
         <AnimatedSection>
-          <p className="font-mono text-xs uppercase tracking-[0.25em] text-accent">Experience</p>
-          <h1 className="mt-2 text-2xl font-bold text-white">Where I&apos;ve worked</h1>
-          <p className="mt-1 text-sm text-muted">Building products in production environments.</p>
+          <p className="font-mono text-xs uppercase tracking-[0.25em] text-accent">
+            Experience
+          </p>
+          <h1 className="mt-2 text-2xl font-bold text-white">
+            Where I&apos;ve worked
+          </h1>
+          <p className="mt-1 text-sm text-muted">
+            Building products in production environments.
+          </p>
         </AnimatedSection>
 
         <div className="relative mt-10 space-y-5">
@@ -81,7 +94,9 @@ export default function ExperiencePage() {
                   <div className="flex flex-wrap items-start justify-between gap-3">
                     <div>
                       <div className="flex flex-wrap items-center gap-2">
-                        <h2 className="text-lg font-bold text-white">{job.company}</h2>
+                        <h2 className="text-lg font-bold text-white">
+                          {job.company}
+                        </h2>
                         {job.current && (
                           <span className="flex items-center gap-1.5 rounded-full bg-accent/10 px-2.5 py-0.5 font-mono text-[10px] text-accent">
                             <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-accent" />
@@ -93,10 +108,14 @@ export default function ExperiencePage() {
                         <span className="rounded-full border border-white/[0.08] px-2.5 py-0.5 font-mono text-xs text-muted">
                           {job.role}
                         </span>
-                        <span className="text-xs text-muted/40">{job.location}</span>
+                        <span className="text-xs text-muted/40">
+                          {job.location}
+                        </span>
                       </div>
                     </div>
-                    <span className="font-mono text-sm text-muted">{job.period}</span>
+                    <span className="font-mono text-sm text-muted">
+                      {job.period}
+                    </span>
                   </div>
 
                   {/* Description */}
@@ -128,7 +147,6 @@ export default function ExperiencePage() {
             </AnimatedSection>
           ))}
         </div>
-
       </div>
     </div>
   );
